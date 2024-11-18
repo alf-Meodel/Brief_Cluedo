@@ -1,4 +1,4 @@
-# Main Title
+# Brief Cluedo
 
 <!-- Main image  -->
 
@@ -10,7 +10,7 @@
 
 # Navigation
 
-- [Benchmark SGBDR](./doc/benchmark-sgbdr.md)
+- [Veille](./doc/annexe/veille.md)
 
 ![border](./assets/line/line-pink-point_l.png)
 
