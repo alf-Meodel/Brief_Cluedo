@@ -4,6 +4,11 @@
 
 ![border](./assets/line/border_deco_rt.png)
 
+# Navigation
+
+- [Veille](./doc/annexe/veille.md)
+- [dictionnaire de données](./doc/dictionnaire-donnees.md)
+
 # Sommaire
 
 - [Objectif et Consignes](#objectif-et-consignes)
@@ -18,10 +23,6 @@
 - [Procédures stockées](#procédures-stockées)
 - [Trigger à réaliser](#trigger-à-réaliser)
 - [Contraintes](#contraintes)
-
-# Navigation
-
-- [Veille](./doc/annexe/veille.md)
 
 ![border](./assets/line/line-pink-point_l.png)
 
