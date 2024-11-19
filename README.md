@@ -70,6 +70,10 @@ Sauf que la partie site web n'est pas pour tout de suite.
 
 Avant cela, vous avez besoin d'une base de données pour le stockage. Et donc de la concevoir et de la mettre en place !
 
+<a href="#sommaire">
+<img src="assets/button/back_to_top.png" alt="Home page" style="width: 150px; height: auto;">
+</a>
+
 ## Modalités pédagogiques
 
 Activité individuelle en mode collaboratif.
@@ -113,7 +117,9 @@ Activité individuelle en mode collaboratif.
 
 - Supprimer une pièce
 
-​
+​<a href="#sommaire">
+<img src="assets/button/back_to_top.png" alt="Home page" style="width: 150px; height: auto;">
+</a>
 
 ## Procédures stockées
 
