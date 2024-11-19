@@ -35,7 +35,7 @@
 
 Un dépôt GitHub contenant :
 
-- [ ] Dictionnaire de données
+- [x] Dictionnaire de données
 - [ ] MCD
 - [ ] MLD
 - [ ] MPD
@@ -57,11 +57,7 @@ Un dépôt GitHub contenant :
 
 En tant que développeur, , vous devez réaliser un système informatique permettant de gérer une partie de jeu de société que vous avez envie de réaliser avec vos avis
 
-​
-
 Ce jeu de société est basé sur le Cluedo avec des personnages que les joueurs déplacent au sein d'un manoir, dans les différentes pièces de celui-ci.
-
-​
 
 Vous devez donc créer un environnement permettant de stocker, pour une partie donnée d'un jeu, les déplacements des personnages de chaque joueur.
 
@@ -127,10 +123,7 @@ Activité individuelle en mode collaboratif.
 Vous devez réaliser les procédures stockées suivantes :
 
 - Lister tous les objets situés dans une pièce passée en paramètre
-
 - Ajout d'un objet passé en paramètre et association avec la pièce concernée
-
-​
 
 ## Trigger à réaliser
 
@@ -138,14 +131,10 @@ Vous devez réaliser les procédures stockées suivantes :
 
 - Cette table sera mise à jour via un trigger à chaque fois qu'un personnage entre ou sort d'une pièce
 
-​
-
 ## Contraintes
 
 - Le NoSQL n'est pas autorisé
-
 - Une gestion RBAC devra être mise en place
-
 - Seul l'administrateur de la BDD pourra ajouter, modifier ou supprimer des données
 
 <a href="#sommaire">
