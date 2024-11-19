@@ -7,7 +7,8 @@
 # Navigation
 
 - [Veille](./doc/annexe/veille.md)
-- [dictionnaire de données](./doc/dictionnaire-donnees.md)
+- [Regles de gestion](./doc/regles-gestion.md)
+- [Dictionnaire de données](./doc/dictionnaire-donnees.md)
 
 # Sommaire
 
