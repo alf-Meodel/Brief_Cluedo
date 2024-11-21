@@ -30,9 +30,46 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
 COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UUIDs)';
 
 
+--
+-- Name: lister_objets_dans_piece(integer); Type: FUNCTION; Schema: public; Owner: meodel
+--
+
+CREATE FUNCTION public.lister_objets_dans_piece(id_salle_param integer) RETURNS TABLE(nom_objet character varying)
+    LANGUAGE plpgsql
+    AS $$
+
+BEGIN
+    -- Démarre le corps de la fonction
+
+    -- Retourne les résultats d'une requête SQL qui liste les objets associés à une salle donnée
+    RETURN QUERY
+    SELECT nom_objet
+    FROM objets
+    WHERE id_salles = id_salle_param; -- Filtre pour ne retourner que les objets de la salle spécifiée par `id_salle_param`
+END;
+-- Indique la fin de la fonction
+
+$$;
+
+
+ALTER FUNCTION public.lister_objets_dans_piece(id_salle_param integer) OWNER TO meodel;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
+
+--
+-- Name: objets; Type: TABLE; Schema: public; Owner: meodel
+--
+
+CREATE TABLE public.objets (
+    id_objets integer NOT NULL,
+    nom_objets character varying(50) NOT NULL,
+    id_salles integer NOT NULL
+);
+
+
+ALTER TABLE public.objets OWNER TO meodel;
 
 --
 -- Name: personnages; Type: TABLE; Schema: public; Owner: meodel
@@ -97,6 +134,14 @@ CREATE TABLE public.visiter (
 
 
 ALTER TABLE public.visiter OWNER TO meodel;
+
+--
+-- Data for Name: objets; Type: TABLE DATA; Schema: public; Owner: meodel
+--
+
+COPY public.objets (id_objets, nom_objets, id_salles) FROM stdin;
+\.
+
 
 --
 -- Data for Name: personnages; Type: TABLE DATA; Schema: public; Owner: meodel
