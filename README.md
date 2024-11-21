@@ -37,9 +37,9 @@
 Un dépôt GitHub contenant :
 
 - [x] Dictionnaire de données
-- [ ] MCD
-- [ ] MLD
-- [ ] MPD
+- [x] MCD
+- [x] MLD
+- [x] MPD
 - [ ] Script SQL de génération de la BDD
 - [ ] Script SQL permettant d'intégrer les données
 - [ ] Requêtes SQL dans le README.md
@@ -49,7 +49,7 @@ Un dépôt GitHub contenant :
 ### Critères de performance
 
 - [ ] Installation facile de l'environnement et sans erreur
-- [ ] Exactitude des relations entre les tables
+- [x] Exactitude des relations entre les tables
 - [ ] Trigger mis en place
 - [ ] Bonne présentation des requêtes sur le README.md
 - [ ] Exécution des requêtes sans erreur
