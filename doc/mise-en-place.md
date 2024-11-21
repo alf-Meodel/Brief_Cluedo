@@ -22,6 +22,14 @@ Une fois que la place à été correctement créé ; nous allons l'exporter en u
 pg_dump -U meodel -d simpluedo -F p -f simpluedo_export.sql
 ```
 
+#### Explications :
+
+- pg_dump : L'outil pour exporter une base de données PostgreSQL.
+- -U meodel : Spécifie l'utilisateur PostgreSQL.
+- -d simpluedo : Spécifie la base de données à exporter.
+- -F p : Spécifie le format de sortie (p pour SQL classique).
+- -f simpluedo_export.sql : Nom du fichier SQL qui contiendra l'export.
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
