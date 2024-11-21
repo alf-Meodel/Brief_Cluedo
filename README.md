@@ -9,6 +9,7 @@
 - [Veille](./doc/annexe/veille.md)
 - [Regles de gestion](./doc/regles-gestion.md)
 - [Dictionnaire de données](./doc/dictionnaire-donnees.md)
+- [Mise en place](./doc/mise-en-place.md)
 
 # Sommaire
 
