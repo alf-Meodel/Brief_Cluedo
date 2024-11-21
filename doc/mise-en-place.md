@@ -79,48 +79,6 @@ Spécifie que la fonction est écrite en PL/pgSQL, le langage procédural de Pos
 - -F p : Spécifie le format de sortie (p pour SQL classique).
 - -f simpluedo_export.sql : Nom du fichier SQL qui contiendra l'export.
 
-# Lister les fonctions
-
-```
-SELECT proname AS fonction, proargtypes AS arguments, prorettype AS retour
-FROM pg_proc
-WHERE pronamespace = (SELECT oid FROM pg_namespace WHERE nspname = 'public');
-```
-
-# Voir le code SQL de la fonction
-
-```
-SELECT pg_get_functiondef(oid)
-FROM pg_proc
-WHERE proname = 'lister_objets_dans_piece';
-```
-
-# Tester la fonction
-
-Une fois la fonction localisée, vous pouvez l'utiliser directement dans une requête SQL pour vérifier son fonctionnement.
-
-Exemple d'utilisation :
-Si vous voulez lister tous les objets de la salle avec id_salles = 1, utilisez :
-
-```
-simpluedo> SELECT * FROM lister_objets_dans_piece(1);
-
-+-----------+
-| nom_objet |
-|-----------|
-+-----------+
-SELECT 0
-Time: 0.015s
-simpluedo>
-
-```
-
-# Supprimer ou modifier la fonction :
-
-Pour retrouver et utiliser votre fonction **`lister_objets_dans_piece`** dans votre base de données PostgreSQL, voici ce que vous pouvez faire :
-
----
-
 ### **1. Voir la liste des fonctions dans votre base de données**
 
 Vous pouvez utiliser la commande SQL suivante pour afficher toutes les fonctions définies dans votre base de données :
