@@ -19,6 +19,7 @@ DROP DATABASE IF EXISTS simpluedo;
 - [Chaque combinaison ](#chaque-combinaison-de-ces-trois-colonnes-doit-être-unique)
 - [Droits du Simpluedo_admin](#droits-du-simpluedo_admin)
 - [Benchmark des droits de simpluedo_admin](#benchmark-des-droits-de-simpluedo_admin)
+- [Description des deux .sql](#droits-du-simpluedo_admin)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -133,6 +134,46 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO simpluedo
 | Exécuter des fonctions/procédures           | ❌ Non         | Ne peut pas exécuter de fonctions ou procédures stockées.                      |
 | Créer des objets (index, vues, etc.)        | ❌ Non         | Ne peut pas créer des index, des vues ou d'autres objets.                      |
 ```
+
+![border](../assets/line/line-pink-point_r.png)
+
+## Résumé des actions
+
+### Création de la base et de ses structures
+
+- Connexion à la base postgres.
+- Suppression de la base de données simpluedo si elle existe.
+- Création de la base de données simpluedo.
+- Création de l'utilisateur simpluedo_admin.
+- Définition du mot de passe pour simpluedo_admin.
+- Connexion à la base de données simpluedo.
+- Création de la table utilisateurs.
+- Création de la table roles.
+- Création de la table salles.
+- Création de la table personnages.
+- Création de la table objets.
+- Création de la table visiter.
+- Ajout de la clé étrangère id_roles dans la table utilisateurs.
+- Ajout de la clé étrangère id_personnages dans la table utilisateurs.
+- Ajout de la clé étrangère id_salles dans la table objets.
+- Attribution des permissions SELECT, INSERT, UPDATE, DELETE à simpluedo_admin.
+
+### Injection de données dans les tables
+
+- Connexion à la base de données simpluedo.
+- Insertion des données dans la table roles :
+  - observateur, utilisateur, maitre du jeu.
+- Insertion des données dans la table personnages :
+  - Colonel MOUTARDE, Docteur OLIVE, Professeur VIOLET, Madame PERVENCHE, Mademoiselle ROSE, Madame LEBLANC.
+- Insertion des données dans la table salles :
+  Cuisine, Grand salon, Petit salon, Bureau, Bibliothèque, Studio, Hall, Véranda, Salle à manger.
+- Insertion des données dans la table objets :
+  - Poignard (3), Revolver (5), Chandelier (1), Corde (6), Clé anglaise (4), Matraque (2).
+- Insertion des données dans la table utilisateurs avec personnage et rôle :
+  - Srekaens (maitre du jeu, personnage 2).
+  - MessaKami, GETGETR, Shotax, Nuage, Puduchlip (utilisateurs avec personnages 1, 3, 6, 5, 4 respectivement).
+- Insertion des données dans la table utilisateurs avec rôle uniquement :
+  - Martial, Enguerran, Boris, Yohan, Aurore, Gabriel (tous observateurs).
 
 ![border](../assets/line/line-pink-point_r.png)
 

@@ -4,7 +4,7 @@
 
 ![border](../assets/line/border_deco_rt.png)
 
-# Procédures stockées et triggers
+# Les Procédures Stockées
 
 ![border](../assets/line/line-pink-point_l.png)
 
@@ -22,7 +22,7 @@ Une fois que la place à été correctement créé ; nous allons l'exporter en u
 pg_dump -U meodel -d simpluedo -F p -f simpluedo_export.sql
 ```
 
-# Mise en place des procédures stoquées et des triggers
+# Mise en place des procédures stoquées
 
 -- Crée une nouvelle fonction ou remplace une fonction existante appelée `lister_objets_dans_piece`
 
@@ -34,8 +34,6 @@ CREATE OR REPLACE FUNCTION lister_objets_dans_piece(id_salle_param INTEGER)
 
 ```
 RETURNS TABLE (nom_objet VARCHAR) AS $$
-
-
 BEGIN
 ```
 
@@ -164,8 +162,6 @@ Cela affichera une liste de toutes les fonctions, leurs arguments et leur type d
    ```sql
    SELECT * FROM lister_objets_dans_piece(1);
    ```
-
-Si vous avez des questions sur une étape ou voulez plus de détails, dites-le-moi ! 🚀
 
 ![border](../assets/line/line-pink-point_r.png)
 

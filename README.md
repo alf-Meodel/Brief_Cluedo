@@ -9,8 +9,9 @@
 - [Veille](./doc/annexe/veille.md)
 - [Regles de gestion](./doc/regles-gestion.md)
 - [Dictionnaire de données](./doc/dictionnaire-donnees.md)
+- [Triggers ](./doc/triggers.md)
+- [Les Procédures Stockées](./doc/procedures-stockées.md)
 - [Comprehensions .sql](./doc/comprehension-sql.md)
-- [Procédures stockées/ Triggers ](./doc/procedures-stockées-triggers.md)
 
 # Sommaire
 
