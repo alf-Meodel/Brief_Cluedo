@@ -46,6 +46,52 @@ CREATE TABLE positions (
 - id_salles : Salle actuelle du personnage.
 - heure_entree : Heure d’entrée dans la salle.
 
+##### Pourquoi cette démarche ?
+
+- Simplicité : La table positions agit comme une vue condensée des données actuelles.
+- Performance : Évitez des requêtes complexes sur visiter pour obtenir la position actuelle.
+- Intégrité des données : Grâce aux triggers, positions est synchronisée automatiquement avec visiter.
+
+##### Démarche en pratique avec les triggers
+
+- Mise à jour de la position lors d’une nouvelle entrée
+  Lorsqu’un personnage entre dans une pièce (via la table visiter), ajoutez ou mettez à jour la table positions.
+- Suppression de la position lors d’une sortie
+  Lorsqu’une heure de sortie est enregistrée dans visiter, supprimez l’entrée associée dans positions.
+
+### 1. Contexte :
+
+Vous gérez des personnages qui entrent et sortent de différentes salles. La table visiter enregistre **l’historique complet des déplacements** (toutes les visites, avec les heures d’arrivée et de sortie).
+
+Cependant, si vous voulez savoir immédiatement où se trouve chaque personnage en ce moment, interroger l’historique complet peut être :
+
+- Complexe (requête longue avec des conditions).
+- Inefficace (surtout si des milliers de visites sont enregistrées).
+  Le trigger permet de maintenir à jour une table positions, qui contient :
+
+- La salle actuelle de chaque personnage.
+- L’heure à laquelle il est entré dans cette salle.
+
+### 2. Ce que le trigger permet de faire :
+
+En un coup d'œil, savoir où se trouve un personnage
+Si vous voulez répondre à la question : "Où est actuellement le personnage Colonel MOUTARDE ?", il suffit de consulter la table positions.
+Par exemple :
+
+```
+id_personnages = 1, id_salles = 3 (Salle à manger), heure_entree = 10:00
+```
+
+Cela signifie que le Colonel MOUTARDE est dans la salle Salle à manger depuis 10h00.
+Empêcher des incohérences dans les déplacements
+Le trigger empêche des situations impossibles, par exemple :
+
+Un personnage présent dans deux salles en même temps.
+Exemple : Si le Colonel MOUTARDE est dans la salle à manger, le trigger bloque tout ajout d’une autre salle comme "Salon" pour ce personnage, tant qu’il n’est pas sorti de la première pièce.
+Automatisation et fiabilité
+Automatisation : Dès qu’un personnage entre dans une salle (via une insertion dans visiter), sa position actuelle est automatiquement mise à jour dans positions.
+Fiabilité : Lorsqu’un personnage quitte une salle (via une mise à jour de l’heure de sortie dans visiter), sa position est supprimée de la table positions.
+
 ### Trigger pour mettre à jour la position en temps réel
 
 Ce trigger met à jour la table positions lorsqu’un personnage entre dans une nouvelle pièce.
