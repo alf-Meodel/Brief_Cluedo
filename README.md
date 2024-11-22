@@ -10,6 +10,8 @@
 - [Regles de gestion](./doc/regles-gestion.md)
 - [Dictionnaire de données](./doc/dictionnaire-donnees.md)
 - [Mise en place](./doc/mise-en-place.md)
+- [Detail](./doc)
+- [Importer un Script](./doc/importer-script.md)
 
 # Sommaire
 
