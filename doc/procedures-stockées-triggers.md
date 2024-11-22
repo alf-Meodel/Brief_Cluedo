@@ -4,7 +4,7 @@
 
 ![border](../assets/line/border_deco_rt.png)
 
-# MISE EN PLACE
+# Procédures stockées et triggers
 
 ![border](../assets/line/line-pink-point_l.png)
 
