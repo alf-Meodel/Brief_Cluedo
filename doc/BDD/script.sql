@@ -138,6 +138,7 @@ CREATE OR REPLACE PROCEDURE ajout_objet(var_nom_objets VARCHAR, var_nom_salles V
      END IF;
  END;
  $$;
+ 
 -- ==================================================================
 -- Procédure pour lister tous les objets situés dans une salle
 
@@ -160,6 +161,44 @@ BEGIN
 END;
 $$;
 
+-- ==================================================================
+--                              TRIGGER
+-- ==================================================================
+
+CREATE OR REPLACE FUNCTION trigger_set_heure_arrivee()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Si heure_arrivee est NULL, on la remplace par l'heure actuelle
+    IF NEW.heure_arrivee IS NULL THEN
+        NEW.heure_arrivee := NOW()::TIME;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- CREATION DU TRIGGER 
+
+CREATE TRIGGER trigger_set_heure_arrivee
+BEFORE INSERT ON visiter
+FOR EACH ROW
+EXECUTE FUNCTION trigger_set_heure_arrivee();
+
+-- ==================================================================
+--                              TEST
+-- ==================================================================
+
+-- Insérez un personnage et une salle pour les tests
+-- INSERT INTO personnages (nom_personnages) VALUES ('Personnage 1');
+-- INSERT INTO salles (nom_salles) VALUES ('Salle 1');
+
+-- Test dans visiter sans spécifier heure_arrivee
+-- INSERT INTO visiter (id_personnages, id_salles)
+-- VALUES (1, 1);
+
+-- Vérifiez les résultats
+-- SELECT * FROM visiter;
+-- SELECT * FROM position;
 
 
 
